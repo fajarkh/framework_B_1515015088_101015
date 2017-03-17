@@ -19,10 +19,17 @@ Route::get('hallo-dunia', function () {
     return 'hallo bro';
 });
 
-Route::get('pengguna/{pengguna}', function ($pengguna) {
-    return "hallo bro dari : $pengguna";
-});
-
 Route::get('berita/{berita?}', function ($berita = "laravel 5") {
     return "berita $berita belum dibaca";
-});
+});	
+Route::get('pengguna','penggunacontroller@awal');
+Route::get('pengguna/tambah','penggunacontroller@tambah');
+
+Route::get('mahasiswa','mahasiswacontroller@awal');
+Route::get('mahasiswa/tambah','mahasiswacontroller@tambah');
+
+Route::get('dosen','dosencontroller@awal');
+Route::get('dosen/tambah','dosencontroller@tambah');
+
+Route::get('ruangan','ruangancontroller@awal');
+Route::get('ruangan/tambah','ruangancontroller@tambah');
