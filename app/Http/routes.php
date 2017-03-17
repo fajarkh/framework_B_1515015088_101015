@@ -33,3 +33,12 @@ Route::get('dosen/tambah','dosencontroller@tambah');
 
 Route::get('ruangan','ruangancontroller@awal');
 Route::get('ruangan/tambah','ruangancontroller@tambah');
+
+Route::get('dosenmatakuliah','dosenmatakuliahcontroller@awal');
+Route::get('dosenmatakuliah/tambah','dosenmatakuliahcontroller@tambah');
+
+Route::get('matakuliah','matakuliahcontroller@awal');
+Route::get('matakuliah/tambah','matakuliahcontroller@tambah');
+
+Route::get('jadwalmatakuliah','jadwalmatakuliahcontroller@awal');
+Route::get('jadwalmatakuliah/tambah','jadwalmatakuliahcontroller@tambah');
