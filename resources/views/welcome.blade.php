@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Laravel Punya Fajar KH</title>
+        <title>Laravel Fajar Kh</title>
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
@@ -11,7 +11,6 @@
             }
 
             body {
-				background:#26ffff;
                 margin: 0;
                 padding: 0;
                 width: 100%;
@@ -32,14 +31,15 @@
             }
 
             .title {
-                font-size: 96px;
+                font-size: 128px;
+				font-weight:bold;
             }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Laravel 5 Versi Fajarkh</div>
+                <div class="title">Farr - Awayy</div>
             </div>
         </div>
     </body>
