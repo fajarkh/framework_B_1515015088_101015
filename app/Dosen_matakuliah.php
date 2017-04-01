@@ -12,12 +12,12 @@ class Dosen_matakuliah extends Model
 	public function dosen(){
 	return $this->BelongsTo(Dosen::class);
 	}	
-	public function matakuiah(){
+	public function matakuliah(){
 	//return $this->BelongsTo(Matakuliah::class);
-	return $this->belongsTo('App\Matakuliah', 'id'); 
+	return $this->BelongsTo(Matakuliah::class); //kebalikan dari hasmany di matakuiahs
 	}	
 	public function jadwal_matakuliah(){
-	return $this->HasMany(Jadwal_matakuliah::class); //one to Many dari dosen matakuiah (one) ke Jadwal matakuliah (many)
+	return $this->hasMany(Jadwal_matakuliah::class); //one to Many dari dosen matakuiah (one) ke Jadwal matakuliah (many)
 	}
 	}
 

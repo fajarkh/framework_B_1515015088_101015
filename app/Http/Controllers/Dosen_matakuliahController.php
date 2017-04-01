@@ -36,12 +36,12 @@ public function semua_matkul() {
 	$dosen = dosen_matakuliah::first();  //untuk menampilkan semua data 
 	echo "nama dosen :" .$dosen->dosen->nama;
 	echo "<br>";
-//	echo "Matkul :" .$dosen->matakuliah->title;
-	$matkul = $dosen->matakuliah_id;
+	echo "Mengajar Pada mata kuliah :" .$dosen->matakuliah->title;
+//	$matkul = $dosen->matakuliah_id;
 //	$dosen->matakuliah->title;
-	echo "<br>";
-	echo " Mengajar Pada matakuliah : " .matakuliah::where('id', '=', $matkul)
-													->select('title')
-													->get();
+//	echo "<br>";
+//	echo " Mengajar Pada matakuliah : " .matakuliah::where('id', '=', $matkul)
+//													->select('title')
+//													->get();
 }
 }

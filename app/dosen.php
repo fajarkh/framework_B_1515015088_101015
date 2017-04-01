@@ -13,6 +13,6 @@ class Dosen extends Model
 	return $this->BelongsTo(Pengguna::class);  //kembalian dari hasone pengguna
 	}
 	public function dosen_matakuliah(){
-	return $this->hasMany(DosenMatakuliah::class); //one to Many dari dosen matakuliah (one) ke Jadwal matakuliah (many)
+	return $this->hasMany(Dosen_Matakuliah::class); //one to Many dari dosen matakuliah (one) ke Jadwal matakuliah (many)
 	}
 }

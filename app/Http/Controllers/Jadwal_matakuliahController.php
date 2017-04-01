@@ -26,12 +26,9 @@ class Jadwal_matakuliahController extends Controller
 }
 
 public function jadwal_kulmhs() {
-	$jadwal = jadwal_matakuliah::all();  //untuk menampilkan semua data 
-	foreach ($jadwal as $dos) {  //panggilnya pakai foreach
-	echo "nama Mahasiswa :" .$dos->mahasiwa->nama;
+	$jadwal = jadwal_matakuliah::find(1);  //untuk menampilkan semua data 
+	echo "nama Mahasiswa :" .$jadwal->mahasiswa->nama;
 	echo "<br>";
-	echo " Berada Di Kelas :" .$dos->ruangan->id;
+	echo " Berada Di Kelas :" .$jadwal->ruangan->title;
 }
-}
-
 }
