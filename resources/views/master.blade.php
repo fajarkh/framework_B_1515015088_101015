@@ -55,7 +55,7 @@
 			</ul>	
 				</li>
 				<li class="dropdown active">
-		<a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Pengaturan <span class="caret"></span></a>	
+		<a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pengaturan<span class="caret"></span></a>	
 			<ul class="dropdown-menu" aria-labelledby="dLabel">
 				<li><a href="{{url('pengguna')}}"> Pengguna</a></li>
 				<li class="divider"></li>
@@ -64,11 +64,13 @@
 			</ul>	
 				</li>
 				<li class="dropdown active">
-		<a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> User <span class="caret"></span></a>	
+		<a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Akun <span class="caret"></span></a>	
 			<ul class="dropdown-menu" aria-labelledby="dLabel">
-				<li><a href="{{url('login2')}}"> Login</a></li>
+			<?php		if(Auth::check()){ ?>
+				<li><a href="{{url('logout')}}"> Logout</a></li>
+			<?php } else { ?>
 				<li class="divider"></li>
-				<li><a href="{{url('logout')}}"> Logout</a></li>	
+			<li><a href="{{url('login2')}}"> Login</a></li><?php }	?>
 			</ul>	
 				</li>				
 			</ul>	

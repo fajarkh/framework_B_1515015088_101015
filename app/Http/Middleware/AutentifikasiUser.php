@@ -16,6 +16,7 @@ class AutentifikasiUser
         if($this->auth->check()){
             return $next($request);
         }
+
         return redirect('login2')->withErrors('Silahkan login terlebih dahulu');
     }
 }
