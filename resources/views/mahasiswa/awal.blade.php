@@ -17,8 +17,10 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php $x=1; ?>
+			<?php $x=1;
+			?>
 			@foreach ($semuaMahasiswa as $mahasiswa)
+			
 			<tr>
 				<td>{{ $x++}}</td>
 				<td>{{ $mahasiswa->nama or 'nama kosong' }}</td>

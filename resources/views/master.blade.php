@@ -62,7 +62,15 @@
 				<li><a href="{{url('ruangan')}}"> Ruangan</a></li>	
 				<li><a href="{{url('matakuliah')}}"> Matakuliah</a></li>	
 			</ul>	
-				</li>			
+				</li>
+				<li class="dropdown active">
+		<a href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> User <span class="caret"></span></a>	
+			<ul class="dropdown-menu" aria-labelledby="dLabel">
+				<li><a href="{{url('login2')}}"> Login</a></li>
+				<li class="divider"></li>
+				<li><a href="{{url('logout')}}"> Logout</a></li>	
+			</ul>	
+				</li>				
 			</ul>	
 		</div><!--/.nav-collapse -->		
 			</div>	
@@ -74,6 +82,15 @@
 					<strong> Informasi : </strong>
 			{{Session::get('informasi')}}		
 				</div>
+			@endif
+			@if (count($errors) > 0)
+			<div class="alert alert-danger">
+					<ul>
+						@foreach ($errors->all() as $eror)
+						<li>{{ $eror }}</li>
+						@endforeach
+					</ul>
+			</div>
 			@endif
 			@yield('container')	
 		</div>

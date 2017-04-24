@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -11,10 +11,15 @@
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
-});
+}); */
+Route::get('/login2','SesiController@form');
+Route::post('/login2','SesiController@validasi');
+Route::get('/logout','SesiController@logout');
+Route::get('/','SesiController@index');
 
+Route::group(['middleware'=>'AutentifikasiUser'],function(){
 Route::get('mahasiswa_pengguna', 'MahasiswaController@mahasiswa');
 Route::get('mahasiswa_pengguna/semua', 'MahasiswaController@semua_mahasiswa');
 Route::get('mahasiswa/jadwal/ruangan', 'Jadwal_matakuliahController@jadwal_kulmhs');
@@ -80,3 +85,28 @@ Route::get('jadwal_matakuliah/edit/{jadwal_matakuliah}', 'Jadwal_MatakuliahContr
 Route::post('jadwal_matakuliah/edit/{jadwal_matakuliah}', 'Jadwal_MatakuliahController@update');
 Route::get('jadwal_matakuliah/hapus/{jadwal_matakuliah}', 'Jadwal_MatakuliahController@hapus');
 
+Route::get('/dosen_ngajar', function () {
+    return \App\Dosen_Matakuliah::whereHas('dosen',function($query)
+	{
+		$query->where('nama','like','%f%')
+				->where('nip','like','%b%');
+	})->with('dosen')->groupBy('dosen_id')->get();
+});
+
+Route::get('/input', function () {
+    echo Form::open(['url'=>'/']).
+    	 Form::label('nama').
+    	 Form::text('nama',null).
+    	 Form::submit('kirim').
+    	 Form::close();
+});
+
+Route::post('/reqget',function (Request $request)
+{
+	echo "Hasil dari Form input tadi nama : ".$request->nama;
+});
+
+Route::get('ujiHas','RelationshipRebornController@ujiHas');
+Route::get('cekmatkul','RelationshipRebornController@cekmatkul');
+Route::get('ujidosenhave','RelationshipRebornController@ujiDoesntHave');
+});
